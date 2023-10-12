@@ -26,6 +26,7 @@ class User extends BaseController
 
     public function create()
     {
+        return view('form');
         $data = view('form');
         return $this->layout('Crie um usuário', '', $data);
     }

@@ -9,7 +9,7 @@ class User extends Seeder
 {
     public function run()
     {
-        $faker = Factory::create();
+        $faker = Factory::create('pt_BR');
 
         $data = [];
 
