@@ -1,0 +1,32 @@
+ul.pagination li {
+        display: inline;
+        border-radius: 0.5rem;
+    }
+    
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 0.5rem;
+
+}
+
+.active {
+    background-color: #c1e7d6;
+    color: white;
+}
+
+ul.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+td a {
+    text-decoration: none;
+}
+
+td img {
+    
+    width: 1.7rem;
+    margin-inline: 0.4rem;
+}

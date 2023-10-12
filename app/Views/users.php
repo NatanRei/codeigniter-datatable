@@ -14,8 +14,14 @@
                 <td><?php echo $user['name'] ?></td>
                 <td><?php echo $user['phone'] ?></td>
                 <td><?php echo $user['email'] ?></td>
-                <td><?php echo anchor(base_url('user/edit/'.$user['id']), 'Editar') ?>
-            <?php echo anchor(base_url('user/delete/'.$user['id']), 'Excluir', ['onclick' => 'return confirme()']) ?></td>
+                <td>
+                    <a href="<?php echo base_url('user/edit/'.$user['id'])?>">
+                        <img src="<?php echo base_url(); ?>assets/images/pencil.svg" alt="Editar usuário" />
+                    </a>   
+                    <a href="<?php echo base_url('user/delete/'.$user['id'])?>">
+                        <img src="<?php echo base_url(); ?>assets/images/trash.svg" alt="Excluir usuário" onclick="return confirme()" />
+                    </a>
+                </td>
             </tr>
         <?php endforeach; ?>
     </table>
@@ -26,7 +32,7 @@
     
 
 </div>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/table.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/table.css">
 <script>
     function confirme() {
         if (confirm('Deseja excluir o registro?')) {
