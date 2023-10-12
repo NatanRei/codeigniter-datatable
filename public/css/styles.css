@@ -1,0 +1,44 @@
+header {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 5rem;
+    
+    background-color: #c1e7d6;
+
+
+}
+
+header a {
+    all: unset;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+header span {
+    font-size: 0.925rem;
+    font-weight: 600;
+}
+
+.success {
+    background-color: #afdbc7;
+    color: #212521;
+    font-weight: 600;
+}
+
+.success:hover {
+    background-color: #96c2af;
+    color: #212521;
+
+}
+
+.align-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

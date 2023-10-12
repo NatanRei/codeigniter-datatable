@@ -7,7 +7,6 @@ use App\Models\UserModel;
 
 class User extends BaseController
 {
-
     private UserModel $userModel;
 
     public function __construct()
@@ -17,15 +16,18 @@ class User extends BaseController
 
     public function index()
     {
-        return view('users', [
+        $data = view('users', [
             'users' => $this->userModel->paginate(10),
             'pager' => $this->userModel->pager
         ]);
+
+        return $this->layout('Usuários - CI4', '', $data);
     }
 
     public function create()
     {
-        return view('form');
+        $data = view('form');
+        return $this->layout('Crie um usuário', '', $data);
     }
 
     public function store() 
