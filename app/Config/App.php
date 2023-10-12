@@ -22,6 +22,8 @@ class App extends BaseConfig
 
     public string $appTimezone = 'UTC';
 
+    public string $charset = 'UTF-8';
+
     public bool $forceGlobalSecureRequests = false;
 
     public array $proxyIPs = [];
