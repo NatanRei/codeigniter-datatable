@@ -8,7 +8,7 @@ use App\Models\UserModel;
 class User extends BaseController
 {
 
-    private $userModel;
+    private UserModel $userModel;
 
     public function __construct()
     {
@@ -23,7 +23,31 @@ class User extends BaseController
         ]);
     }
 
-    public function delete($id) {
+    public function create()
+    {
+        return view('form');
+    }
+
+    public function store() 
+    {
+        if ($this->userModel->save($this->request->getPost())) {
+            return view("messages", [
+                'message' => 'Usuário salvo com sucesso'
+            ]);
+        } else {
+            echo 'Falha ao salvar usuário, tente novamente';
+        }
+    }
+
+    public function edit($id)
+    {
+        return view('form', [
+            'user' => $this->userModel->find($id)
+        ]);
+    }
+
+    public function delete($id) 
+    {
         if ($this->userModel->delete($id)) {
             echo view('messages', [
                 'message' => 'Usuário excluido com Sucesso'

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usuários</title>
     <script>
-        function confirm() {
+        function confirme() {
             if (confirm('Deseja excluir o registro?')) {
                 return true;
             }
@@ -15,6 +15,7 @@
 </head>
 <body>
     <div class="container mt-5">
+        <?php echo anchor(base_url('user/create'), 'Novo usuário', ['class' => 'btn btn-sucess mb-3']) ?>
         <table class="table">
             <tr>
                 <th>ID</th>
@@ -29,8 +30,8 @@
                     <td><?php echo $user['name'] ?></td>
                     <td><?php echo $user['phone'] ?></td>
                     <td><?php echo $user['email'] ?></td>
-                    <td><?php echo anchor('user/edit/'.$user['id'], 'Editar') ?>
-                <?php echo anchor('user/delete/'.$user['id'], 'Excluir', ['onclick' => 'return confirm()']) ?></td>
+                    <td><?php echo anchor(base_url('user/edit/'.$user['id']), 'Editar') ?>
+                <?php echo anchor(base_url('user/delete/'.$user['id']), 'Excluir', ['onclick' => 'return confirme()']) ?></td>
                 </tr>
             <?php endforeach; ?>
         </table>
