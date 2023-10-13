@@ -36,6 +36,19 @@ header span {
 
 }
 
+.success-light {
+    background-color: #e1faef;
+    color: #212521;
+    font-weight: 600;
+}
+
+.success-light a {
+    all: unset;
+    color: #222;
+    font-weight: 500;
+    cursor: pointer;
+}
+
 .align-right {
     width: 100%;
     display: flex;

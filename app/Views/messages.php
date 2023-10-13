@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Atenção!</title>
-</head>
-<body>
-        <div class="container mt-5">
-            <div class="alert alert-info">
-                <?php echo $message; ?>
-                <p class="mt-3" ><?php echo anchor(base_url(), 'Página inicial') ?></p> 
-            </div>
-        </div>
-</body>
-</html>
+<div class="container mt-5">
+    <div class="alert success-light">
+        <h1><?php echo $message; ?></h1>
+        <p class="mt-3" >
+            <a href="<?php echo base_url('user')?>" alt="voltar" ><img src="<?php echo base_url();?>assets/images/arrow-left.svg" > Voltar </a></p> 
+    </div>
+</div>
+<style>
+    h1 {
+        font-size: 1.6rem;
+    }
+    a {
+        all: unset;
+        cursor: pointer;
+    }
+    a img {
+        width: 1.6rem;
+    }
+</style>
