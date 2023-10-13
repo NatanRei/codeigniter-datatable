@@ -3,6 +3,8 @@ FROM php:${PHP_VERSION}
 
 ARG APP_DIR=/var/www/html
 
+ARG REDIS_LIB_VERSION=5.3.7
+
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
@@ -22,7 +24,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql session xml
 RUN pecl install redis-${REDIS_LIB_VERSION} \
     && docker-php-ext-enable redis
 
-RUN docker-php-ext-install zip iconv simplexml pcntl gd fileinfo
+RUN docker-php-ext-install zip iconv simplexml pcntl gd fileinfo intl
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 

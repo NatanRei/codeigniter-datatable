@@ -13,7 +13,7 @@ class User extends Seeder
 
         $data = [];
 
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $data[] = [
                 'name' => $faker->name,
                 'phone' => $faker->phoneNumber,

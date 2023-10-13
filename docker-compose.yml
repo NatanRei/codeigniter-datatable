@@ -2,10 +2,10 @@ version: "3.9"
 services:
   web:
     image: baseimg/nginx-php-fpm8.2.3
-    container_name: web
+    container_name: web_ci4
     build:
       context: .
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./Dockerfile
       args:
         PHP_VERSION: '8.2.4-fpm-bullseye'
     networks:
