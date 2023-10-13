@@ -1,5 +1,10 @@
 <div class="container mt-5">
     <div class="align-right">
+        <form  method="get" action="<?= base_url('user'); ?>" class="mb-3">
+            <label for="search">Filtre por... </label>
+            <input type="text" name="search" placeholder="Nome/ Telefone/ Email"/>
+            <button type="submit" ><img src="<?php echo base_url(); ?>assets/images/search.svg" alt="Pesquisar" /></button>
+        </form>
         <?php echo anchor(base_url('user/create'), 'Novo usuário', ['class' => 'btn success mb-3']) ?>
     </div>
     <table class="table">
