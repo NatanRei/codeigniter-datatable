@@ -30,3 +30,28 @@ td img {
     width: 1.7rem;
     margin-inline: 0.4rem;
 }
+
+form {
+    margin-inline: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+form input {
+    all: unset;
+    border: 1px solid #769487;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+}
+
+form button {
+    all: unset;
+    background-color: #c1e7d6;
+    border-radius: 0.5rem;
+}
+
+form button img {
+    width: 1.7rem;
+    margin: 0.3rem;
+}

@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/styles.css">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="form container mt-5">
         <?php echo form_open('user/store') ?>
             <div class="form-group">
                 <label for="name">Nome</label>
