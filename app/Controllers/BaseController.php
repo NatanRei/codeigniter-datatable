@@ -56,14 +56,21 @@ abstract class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
     }
 
-    protected function layout(string $title, $menu, $content)
+    protected function layout(string $title, $content)
     {
         $data = [
         'title' => $title,
-        'menu' => $menu,
         'content' => $content,
         ];
 
         return view('layouts/default', $data);
+    }
+
+    protected function viewMessage(string $message)
+    {
+        $data = view('messages', [
+                'message' => $message
+            ]);
+        return $this->layout('Sucesso!', $data);
     }
 }

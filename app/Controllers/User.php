@@ -17,46 +17,42 @@ class User extends BaseController
     public function index()
     {
         $data = view('users', [
-            'users' => $this->userModel->paginate(10),
+            'users' => $this->userModel->orderBy('id', 'DESC')->paginate(10),
             'pager' => $this->userModel->pager
         ]);
-
-        return $this->layout('Usuários - CI4', '', $data);
+        return $this->layout('Usuários - CI4', $data);
     }
 
     public function create()
     {
-        return view('form');
         $data = view('form');
-        return $this->layout('Crie um usuário', '', $data);
+        return $this->layout('Crie um usuário', $data);
     }
 
     public function store() 
     {
         if ($this->userModel->save($this->request->getPost())) {
-            return view("messages", [
-                'message' => 'Usuário salvo com sucesso'
-            ]);
-        } else {
-            echo 'Falha ao salvar usuário, tente novamente';
+            return $this->viewMessage('Usuário salvo com sucesso');
         }
+        echo 'Falha ao salvar usuário, tente novamente';
+        return;
     }
 
     public function edit($id)
     {
-        return view('form', [
-            'user' => $this->userModel->find($id)
-        ]);
+        $user = $this->userModel->find($id);
+        $data = view('form', [
+                'user' => $user
+            ]);
+        return $this->layout('Edite ' . $user["name"], $data);
     }
 
     public function delete($id) 
     {
         if ($this->userModel->delete($id)) {
-            echo view('messages', [
-                'message' => 'Usuário excluido com Sucesso'
-            ]);
-        } else {
-            echo 'Falha ao excluir usuário, tente novamente';
+            return $this->viewMessage('Usuário excluido com Sucesso');
         }
+        echo 'Falha ao excluir usuário, tente novamente';
+        return;
     }
 }
